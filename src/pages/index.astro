@@ -5,9 +5,9 @@ import Tour from '../components/Tour.astro';
 let title = 'My Astro Site';
 
 const baseUrl = import.meta.env.PUBLIC_URL;
-const url = `${baseUrl}/api/page?populate=images`;
+const url = `${baseUrl}/api/page`;
 const data  =  await fetch(url).then(res => res.json());
-const images = data.data.attributes.images.data;
+// const images = data.data.attributes.images.data;
 const content = data.data.attributes;
 
 ---
@@ -43,9 +43,7 @@ const content = data.data.attributes;
 			{content.content}
 		</Markdown>
 
-		{data.data.attributes.images.data[0].id}
-
-		<ul>
+		<!-- <ul>
 			{images.map((image) => {
 				return <li>
 					<picture>
@@ -54,7 +52,7 @@ const content = data.data.attributes;
 					<img src={baseUrl + image.attributes.formats.large.url} alt="">
 				</li>
 			})}
-		</ul>
+		</ul> -->
 
 	</main>
 </body>
