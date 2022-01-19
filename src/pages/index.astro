@@ -4,10 +4,10 @@ import Tour from '../components/Tour.astro';
 
 let title = 'My Astro Site';
 
-// const baseUrl = import.meta.env.PUBLIC_URL;
-// const url = `${baseUrl}/api/page`;
-// const data  =  await fetch(url).then(res => res.json());
-// // const images = data.data.attributes.images.data;
+const baseUrl = import.meta.env.PUBLIC_URL;
+const url = `${baseUrl}/page`;
+const data  =  await fetch(url).then(res => res.json());
+// const images = data.data.attributes.images.data;
 // const content = data.data.attributes;
 
 ---
@@ -38,7 +38,7 @@ let title = 'My Astro Site';
 				<h1>Welcome to <a href="https://astro.build/">Astro</a></h1>
 			</div>
 		</header>
-		<h1 class="bg-red-500">Test</h1>
+		<h1 class="bg-red-500">{data.title}</h1>
 
 	</main>
 </body>
